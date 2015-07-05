@@ -1,0 +1,5 @@
+[
+  "public_src/libs/bower_components/webcomponentsjs/webcomponents.js",
+  "public_src/libs/bower_components/jquery/dist/jquery.js",
+  "public_src/libs/bower_components/bootstrap/dist/js/bootstrap.min.js"
+]

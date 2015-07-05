@@ -1,0 +1,45 @@
+{
+  "name": "new-www-app",
+  "private": true,
+  "version": "0.0.1",
+  "description": "sample node server with polymer and a grunt build process",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.10.8",
+    "body-parser": "^1.10.1",
+    "compression": "^1.5.0",
+    "cookie-parser": "^1.3.3",
+    "express-session": "^1.10.1",
+    "serve-favicon": "^2.2.0"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.1",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-concat": "^0.3.0",
+    "grunt-contrib-less": "^0.9.0",
+    "grunt-contrib-uglify": "^0.3.2",
+    "grunt-contrib-watch": "^0.5.3",
+    "grunt-tape": "^0.0.2",
+    "grunt-testling": "^1.0.0",
+    "grunt-vulcanize": "^0.6.4",
+    "phantomjs": "^1.9.12",
+    "tape": "^3.0.3",
+    "testling": "^1.7.1",
+    "time-grunt": "^0.2.9",
+    "uglify-js": "^2.4.12"
+  },
+  "testling": {
+    "files": [
+      "tests/public_src/**/*.js"
+    ],
+    "scripts": [
+      "public/scripts/app.js",
+      "node_modules/angular-mocks/angular-mocks.js"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/"
+  },
+  "author": "Nate Marquardt"
+}

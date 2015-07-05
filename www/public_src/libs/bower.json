@@ -1,0 +1,21 @@
+{
+  "name": "wwwapp",
+  "version": "0.0.1",
+  "authors": [
+    "nathanmarq"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "devDependencies": {},
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0",
+    "bootstrap": "~3.3.1",
+    "iron-ajax": "PolymerElements/iron-ajax#^1.0.0",
+    "iron-input": "PolymerElements/iron-input#~1.0.3"
+  }
+}

@@ -1,0 +1,88 @@
+<dom-module id="polymer-app">
+  <style>
+    :host{
+      /* Set the header background color attribute */
+      --header-background-color: #555;
+      --header-title-size: 36px;
+      --header-subtitle-size: 24px;
+    }
+  </style>
+  <template>
+
+    <!-- GET INITIAL DATA FROM SERVER: -->
+    <iron-ajax auto
+      url="/api/getData/header"
+      method="GET"
+      params='{"alt":"json", "q":"polymer"}'
+      handle-as="json"
+      last-response="{{headerData}}"
+      on-response="handleResponse"
+      on-error="handlError"
+      debounce-duration="300"></iron-ajax>
+
+    <!-- PAGE LAYOUT: -->
+    <div class="outer">
+        <div id="content" class="container">
+          <div class="row">
+            <div id="header">
+              <demo-header
+                  headers="{{headerData}}"
+                  title-size="{{validateTitleSize(titleSize)}}"
+                  subtitle-size="{{validateSubtitleSize(subtitleSize)}}"
+                  class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></demo-header>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3 col-md-2"></div>
+            <div class="col-sm-6 col-md-8 center">
+              <p>
+                The content above is populated via the Polymer iron-ajax element sending a request to the Node server.
+              </p>
+              <p>
+                They can be edited (client-side) through Polymer's two-way binding here:
+              </p>
+              <div class="input-group">
+                <label class="input-group-addon">Title: </label>
+                <input class="form-control" type="text" is="iron-input" bind-value="{{headerData.title}}"></input>
+              </div>
+              <p></p>
+              <div class="input-group">
+                <label class="input-group-addon">Subtitle: </label>
+                <input class="form-control" type="text" is="iron-input" bind-value="{{headerData.subtitle}}"></input>
+              </div>
+              <p></p>
+              <div class="input-group">
+                <label class="input-group-addon">Title Font Size: </label>
+                <input class="form-control" type="number" placeholder='default in px' is="iron-input" bind-value="{{titleSize}}"/>
+              </div>
+              <p></p>
+              <div class="input-group">
+                <label class="input-group-addon">Subtitle Font Size: </label>
+                <input class="form-control" type="number" placeholder='default in px' is="iron-input" bind-value="{{subtitleSize}}"/>
+              </div>
+            </div>
+            <div class="col-sm-3 col-md-2"></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3 col-md-2"></div>
+            <div class="col-sm-6 col-md-8 center">
+              Click a button below to change the header's background color:
+            </div>
+            <div class="col-sm-3 col-md-2"></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3 col-md-3"></div>
+            <div class="col-sm-6 col-md-6 center">
+              <template is="dom-repeat" items="{{colorOptions}}">
+                <button class="btn btn-default colorButton" style$="{{setThisBGColor(item)}}" on-click="changeColor">{{item}}</button>
+              </template>
+            </div>
+            <div class="col-sm-3 col-md-3"></div>
+          </div>
+        </div>
+        <div id="footer"></div>
+    </div>
+  </template>
+  <script>
+  </script>
+</dom-module>

@@ -1,0 +1,13 @@
+.DS_Store
+.vagrant
+
+node_modules
+
+www/public/scripts/*.js
+www/public/views/components/**/*.html
+
+www/public_src/libs/bower_components
+
+www/public/styles/*.css
+
+npm-debug.log
