@@ -33,8 +33,7 @@
       "tests/public_src/**/*.js"
     ],
     "scripts": [
-      "public/scripts/app.js",
-      "node_modules/angular-mocks/angular-mocks.js"
+      "public/scripts/app.js"
     ]
   },
   "repository": {
