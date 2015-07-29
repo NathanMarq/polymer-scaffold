@@ -163,7 +163,7 @@ In order to see the live node.js console as the server is running to debug if ne
 `sudo tail -f /var/log/nodeserver.sys.log`
 
 
-### About the Server ###
+## About the Server ##
 
 The Node Express server will run as a daemon script, and will restart after reboot using Upstart (installed in the bootstrap. See the nodeserver.conf file for settings).
 
